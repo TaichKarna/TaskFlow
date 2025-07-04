@@ -3,7 +3,7 @@ import axios, { AxiosInstance, AxiosRequestConfig, AxiosResponse } from 'axios';
 
 // Create Axios instance
 const axiosInstance: AxiosInstance = axios.create({
-  baseURL: 'http://74.225.254.135:3000',
+  baseURL: 'https://taskflow-icvu.onrender.com/',
   headers: {
     'Content-Type': 'application/json',
   },
@@ -21,7 +21,7 @@ if (typeof window !== 'undefined') {
 }
 
 axiosInstance.interceptors.response.use(
-  (response) => response,
+  (response: AxiosResponse) => response,
   (error) => {
     if (error.response?.status === 401) {
       console.warn('Unauthorized: Redirect to login or show modal');
